@@ -6,6 +6,11 @@
   "repository": "git@github.com:marinov98/big-red-hacks2019.git",
   "author": "marinov98 <Marin.Marinov38@myhunter.cuny.edu>",
   "license": "MIT",
+  "engines": {
+    "node": ">=10.16.3",
+    "yarn": ">=1.21.1",
+    "npm": "6.x"
+  },
   "scripts": {
     "app-install": "yarn install && cd client && yarn install && cd ..",
     "format": "prettier --config .prettierrc --write client/src/**/*.js*  server/**/*.js*",
