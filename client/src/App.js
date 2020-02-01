@@ -62,7 +62,7 @@ export default class App extends Component {
         <div>
           <Spinner
             type="grow"
-            style={{ marginTop: '50px', width: '15rem', height: '15rem' }}
+            style={{ marginTop: '30px', width: '10rem', height: '10rem' }}
             color="danger"
           ></Spinner>
         </div>
