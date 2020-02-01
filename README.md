@@ -1,6 +1,6 @@
 # Big Red Hacks 2019
 
-- Heroku Link:
+- Heroku Link: <https://weather-guardian.herokuapp.com/>
 
 ## Getting started
 
