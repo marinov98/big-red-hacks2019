@@ -7,12 +7,13 @@
   "author": "marinov98 <Marin.Marinov38@myhunter.cuny.edu>",
   "license": "MIT",
   "scripts": {
+    "app-install": "yarn install && cd client && yarn install && cd ..",
     "format": "prettier --config .prettierrc --write client/src/**/*.js*  server/**/*.js*",
-    "start": "node server/server.js",
-    "build": "yarn install && cd client && yarn install && cd ..",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm start --prefix client",
-    "server": "nodemon server/server.js"
+    "server": "nodemon server/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run app-install && npm run build --prefix client",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "axios": "^0.19.0",

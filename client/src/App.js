@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
-import { Alert } from 'reactstrap';
+import { Alert, Spinner } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -25,7 +25,7 @@ export default class App extends Component {
       // Forcast data
       const { data } = await axios({
         method: 'get',
-        url: `http://localhost:8080/ibmCloud/forcast/${zip}`
+        url: `/ibmCloud/forcast/${zip}`
       });
 
       this.setState({
@@ -38,7 +38,7 @@ export default class App extends Component {
       // Fire data
       const fireResponse = await axios({
         method: 'get',
-        url: `http://localhost:8080/ibmCloud/firedata/${zip}`
+        url: `/ibmCloud/firedata/${zip}`
       });
       this.setState({ fireData: fireResponse.data });
     } catch (err) {
@@ -58,7 +58,15 @@ export default class App extends Component {
         </div>
       );
     } else if (this.state.data.waiting) {
-      return <div>Awaiting results...</div>;
+      return (
+        <div>
+          <Spinner
+            type="grow"
+            style={{ marginTop: '50px', width: '15rem', height: '15rem' }}
+            color="danger"
+          ></Spinner>
+        </div>
+      );
     } else if (this.state.data.error) {
       return <div>Zip code could not be found</div>;
     } else {
