@@ -3,9 +3,6 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const { ibmController, googleController } = require('./routes');
-const { config } = require('dotenv');
-
-config();
 
 // Initialize express
 const app = express();
